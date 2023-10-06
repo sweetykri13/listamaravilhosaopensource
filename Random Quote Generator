@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <p id="quote"></p>
+    <button id="generateButton">Generate Quote</button>
+
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Life is what happens when you're busy making other plans. - John Lennon",
+            "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+            "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+            "The only thing we have to fear is fear itself. - Franklin D. Roosevelt"
+        ];
+
+        const quoteElement = document.getElementById("quote");
+        const generateButton = document.getElementById("generateButton");
+
+        // Function to generate a random quote
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            quoteElement.textContent = randomQuote;
+        }
+
+        generateButton.addEventListener("click", generateRandomQuote);
+
+        // Generate a random quote when the page loads
+        generateRandomQuote();
+    </script>
+</body>
+</html>
